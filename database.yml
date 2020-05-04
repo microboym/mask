@@ -1,10 +1,11 @@
 ---
 development:
   dialect: postgres
-  database: mask_dev
-  user: dev
+  database: mask
+  user: postgres
   password: 7777777
   host: 127.0.0.1
+  port: 54321
   pool: 5
 
 test:
