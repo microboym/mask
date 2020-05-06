@@ -13,7 +13,6 @@ import (
 type Order struct {
 	Phone     string       `json:"phone" db:"phone"`
 	CreatedAt time.Time    `json:"created_at" db:"created_at"`
-	UpdatedAt time.Time    `json:"updated_at" db:"updated_at"`
 	Image     bytes.Buffer `json:"image" db:"img"`
 }
 
