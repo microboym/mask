@@ -1,5 +1,5 @@
 <header>
-  <div class="container">
+  <!-- <div class="container">
     <div class="row">
       <div class="col-md-1 col-sm-2 col-xs-2 logo">
         <a href="<%= rootPath() %>"><img src="<%= rootPath() %>assets/images/logo.svg" alt=""></a>
@@ -14,7 +14,7 @@
         </h2>
       </div>
     </div>
-  </div>
+  </div> -->
 
 </header>
 
@@ -22,37 +22,35 @@
   <div class="col-md-12">
     <div class="subtitle">
       <div class="container">
-        <h3>Defined Routes</h3>
+        <h3>Order Users</h3>
       </div>
     </div>
     <div class="table-responsive">
       <table class="table table-striped">
         <thead>
-          <tr text-align="left">
-            <th class="centered">METHOD</th>
-            <th>PATH</th>
-            <th>NAME</th>
-            <th>HANDLER</th>
+          <tr tex t-align="left">
+            <th class="centered">Phone</th>
+            <th>Password</th>
           </tr>
         </thead>
         <tbody>
 
-          <%= for (r) in routes { %>
+          <%= for (u) in users { %>
             <tr>
               <td class="centered">
-                <%= r.Method %>
+                <%= u.Phone %>
               </td>
               <td>
-                <%= if (r.Method != "GET" || r.Path ~= "{") {
+                <%= u.Password %>
+              </td>
+              <!-- <td> -->
+                <%# if (r.Method != "GET" || r.Path ~= "{") {
                   return r.Path
                 } else {
                   return linkTo(r.Path, {body: r.Path})
                 } %>
-              </td>
-              <td>
-                <%= r.PathName %>
-              </td>
-              <td><code><%= r.HandlerName %></code></td>
+              <!-- </td> -->
+              <td><code><%# r.HandlerName %></code></td>
             </tr>
           <% } %>
 
