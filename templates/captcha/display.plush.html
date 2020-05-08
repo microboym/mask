@@ -1,0 +1,29 @@
+<h1 class="text-center">填写验证码</h1>
+<!-- <form action="/captcha/answer" method="post">
+    <div style="float: left; margin: 20px;">
+        <input type="number" placeholder="计算结果" style="width: 100px; margin: 10px;" />
+        <img src="<%= image %>" style="width: 100px; margin: 10px;" />
+    </div>
+    <input type="submit" value="提交">
+</form> -->
+
+<%= form_for( captcha, {action: captchaAnswerPath(), method: "POST"}) { %>
+    <div class="row">
+        <%= f.HiddenTag("ImageSha") %>
+        <div class="col-2" style="min-width: 200px; margin-left: 10px; margin-top: 10px;">
+            <%= f.InputTag("Answer", {hide_label: true, type: "number"}) %>
+        </div>
+        <div class="col-2">
+            <img src="<%= image %>" style="width: 120px; margin-top: 13px;" />
+        </div>
+    </div>
+    <div class="row">
+        <%= f.SubmitTag("提交") %>
+    </div>
+<% } %>
+
+
+<!-- <div class="form-group">
+    <label for="usr">验证码:</label>
+    <input type="text" class="form-control" id="usr">
+</div> -->
