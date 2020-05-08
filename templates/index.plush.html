@@ -1,62 +1,46 @@
-<header>
-  <!-- <div class="container">
-    <div class="row">
-      <div class="col-md-1 col-sm-2 col-xs-2 logo">
-        <a href="<%= rootPath() %>"><img src="<%= rootPath() %>assets/images/logo.svg" alt=""></a>
-      </div>
-      <div class="col-md-9 col-sm-9 col-xs-10 titles">
-        <h1><%= t("welcome_greeting") %></h1>
-        <h2>
-          <a href="https://github.com/gobuffalo/buffalo"><i class="fab fa-github" aria-hidden="true"></i> https://github.com/gobuffalo/buffalo</a>
-        </h2>
-        <h2 class="documentation">
-          <a href="http://gobuffalo.io/"><i class="fa fa-book" aria-hidden="true"></i> Documentation</a>
-        </h2>
-      </div>
-    </div>
-  </div> -->
+<h1 class="m-3 my-1">家庭口罩预约</h1>
 
-</header>
-
-<div class="row">
-  <div class="col-md-12">
-    <div class="subtitle">
-      <div class="container">
-        <h3>Order Users</h3>
+<div class="row centered-md">
+  <div class="col-md-12 col-lg-4">
+    <div class="m-3">
+      <h5>成功的预约</h5>
+      <%= if (orderCount != 0) { %>
+        <h6><%= orderCount %> 未购买</h6>
+      <% } else { %>
+        <h6 class="text-success">已经全部购买</h6>
+      <% } %>
+        <p>
+          查看所未购买的预约, 包括还没有生效的预约
+          <br>
+          <span class="text-info">每个预约会在第二天生效</span>
+        </p>
+        <a class="btn btn-outline-primary">查看预约</a>
       </div>
     </div>
-    <div class="table-responsive">
-      <table class="table table-striped">
-        <thead>
-          <tr tex t-align="left">
-            <th class="centered">Phone</th>
-            <th>Password</th>
-          </tr>
-        </thead>
-        <tbody>
-
-          <%= for (u) in users { %>
-            <tr>
-              <td class="centered">
-                <%= u.Phone %>
-              </td>
-              <td>
-                <%= u.Password %>
-              </td>
-              <!-- <td> -->
-                <%# if (r.Method != "GET" || r.Path ~= "{") {
-                  return r.Path
-                } else {
-                  return linkTo(r.Path, {body: r.Path})
-                } %>
-              <!-- </td> -->
-              <td><code><%# r.HandlerName %></code></td>
-            </tr>
-          <% } %>
-
-        </tbody>
-      </table>
+    <div class="col-md-12 col-lg-4">
+      <div class="m-3">
+        <h5>填写验证码</h5>
+        <%= if (captchaCount != 0) { %>
+          <h6><%= captchaCount %> 未填写</h6>
+        <% } else { %>
+          <h6 class="text-success">无正在使用的验证码</h6>
+          <h7 class="text-info">建议生成验证码</h7>
+        <% } %>
+        <p>
+          为口罩预约填写验证码, 并为图像识别提供训练数据
+          <br>
+          建议积极填写
+        </p>
+        <a class="btn btn-outline-primary">填写数据</a>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-4">
+      <div class="m-3">
+        <h5>查看登陆凭据</h5>
+        <p>
+          登陆<a class="reference" href="http://kz.yq.zszwfw.cn/kzyy-register/#/">中山市口罩预约系统</a>时需要的手机号和身份验证码
+        </p>
+        <a class="btn btn-outline-primary">查看</a>
+      </div>
     </div>
   </div>
-</div>
-<div class="foot"> <span> Powered by <a href="http://gobuffalo.io/">gobuffalo.io</a></span> </div>
