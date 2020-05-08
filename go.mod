@@ -15,7 +15,6 @@ require (
 	github.com/gobuffalo/pop v4.13.1+incompatible
 	github.com/gobuffalo/suite v2.8.2+incompatible
 	github.com/gobuffalo/validate v2.0.4+incompatible
-	github.com/gofrs/uuid v3.2.0+incompatible
 	github.com/markbates/grift v1.5.0
 	github.com/unrolled/secure v0.0.0-20190103195806-76e6d4e9b90c
 )
