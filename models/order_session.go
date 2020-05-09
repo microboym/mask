@@ -9,9 +9,9 @@ import (
 
 // OrderSession is used by pop to map your .model.Name.Proper.Pluralize.Underscore database table to your go code.
 type OrderSession struct {
-	Phone string `json:"phone" db:"phone"`
-	// CreatedAt time.Time `json:"created_at" db:"created_at"`
-	// UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
+	Phone    string  `json:"phone" db:"phone"`
+	Captcha1 Captcha `json:"captcha1" db:"captcha1" belongs_to:"captcha"`
+	Captcha2 Captcha `json:"captcha2" db:"captcha2" belongs_to:"captcha"`
 }
 
 // String is not required by pop and may be deleted

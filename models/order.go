@@ -1,7 +1,6 @@
 package models
 
 import (
-	"bytes"
 	"encoding/json"
 	"time"
 
@@ -11,9 +10,9 @@ import (
 
 // Order is used by pop to map your .model.Name.Proper.Pluralize.Underscore database table to your go code.
 type Order struct {
-	Phone     string       `json:"phone" db:"phone"`
-	CreatedAt time.Time    `json:"created_at" db:"created_at"`
-	Image     bytes.Buffer `json:"image" db:"img"`
+	Phone     string    `json:"phone" db:"phone"`
+	CreatedAt time.Time `json:"created_at" db:"created_at"`
+	Image     []byte    `json:"image" db:"img"`
 }
 
 // String is not required by pop and may be deleted
