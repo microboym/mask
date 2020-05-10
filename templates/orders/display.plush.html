@@ -1,0 +1,29 @@
+<h1>口罩预约</h1>
+
+<!-- <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#image_popup"
+    aria-expanded="false">Popup image</button> -->
+
+<div class="accordion" id="accordionExample">
+    <%= for (order) in orders { %>
+    <div class="card">
+        <div class="card-header" id="heading-<%= order.Phone %>">
+            <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                    data-target="#collapse-<%= order.Phone %>" aria-expanded="false"
+                    aria-controls="collapse-<%= order.Phone %>">
+                    <span class="text-primary">手机号: </span> <%= order.Phone %>
+                </button>
+            </h2>
+        </div>
+        <div id="collapse-<%= order.Phone %>" class="collapse" aria-labelledby="heading-<%= order.Phone %>"
+            data-parent="#accordionExample">
+            <div class="card-body">
+                <div class="card-text">
+                        <span class="text-info">时间: </span><%= order.CreatedAt.Format("2006-02-02") %>
+                        <img src="<%= rootPath()%>assets/images/screenshot.png" class="img-responsive">
+                </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+</div>

@@ -63,6 +63,8 @@ func App() *buffalo.App {
 
 		app.GET("/captcha", CaptchaDisplay)
 		app.POST("/captcha/answer", CaptchaUploadAnswer)
+
+		app.GET("/orders/image", OrdersImage)
 		app.ServeFiles("/", assetsBox) // serve files from the public directory
 	}
 
