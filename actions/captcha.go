@@ -1,7 +1,6 @@
 package actions
 
 import (
-	"encoding/base64"
 	"mask/models"
 
 	"github.com/gobuffalo/buffalo"
@@ -14,11 +13,6 @@ func CaptchaDisplay(c buffalo.Context) error {
 	if err := models.DB.All(&captchas); err != nil {
 		return err
 	}
-	imageBase64 := base64.StdEncoding.EncodeToString(captchas[0].Image)
-	c.Set("image", "data:image/jpg;base64,"+imageBase64)
-
-	// imageSHABase64 := base64.StdEncoding.EncodeToString(captchas[0].Image)
-	// c.Cookies().Set("image_sha", imageSHABase64, time.Minute*5)
 	c.Set("captcha", captchas[0])
 	return c.Render(200, r.HTML("captcha/display.html"))
 }

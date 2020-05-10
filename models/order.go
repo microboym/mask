@@ -12,7 +12,7 @@ import (
 type Order struct {
 	Phone     string    `json:"phone" db:"phone"`
 	CreatedAt time.Time `json:"created_at" db:"created_at"`
-	Image     []byte    `json:"image" db:"img"`
+	Image     PNGImage  `json:"image" db:"img"`
 }
 
 // String is not required by pop and may be deleted

@@ -11,7 +11,7 @@ import (
 // Captcha is used by pop to map your .model.Name.Proper.Pluralize.Underscore database table to your go code.
 type Captcha struct {
 	ID     []byte       `json:"image_sha" db:"img_sha"`
-	Image  []byte       `db:"img"`
+	Image  JPGImage     `db:"img"`
 	Answer nulls.String `json:"answer" db:"answer"`
 }
 
