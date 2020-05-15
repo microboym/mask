@@ -13,7 +13,7 @@ func HomeHandler(c buffalo.Context) error {
 	if err != nil {
 		return err
 	}
-	captchaCount, err := models.DB.Where("answer = null").Count(models.Captchas{})
+	captchaCount, err := models.DB.Where("equation = null").Count(models.Captchas{})
 	if err != nil {
 		return err
 	}
